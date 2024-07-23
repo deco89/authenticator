@@ -26,6 +26,7 @@ export class ActivateAccountComponent {
       next: () => {
         this.message = 'Sua conta foi ativada com sucesso. \n Você pode proceguir para login.'
         this.submitted = true;
+        this.isOkay = true;
       },
       error: () => {
         this.message = 'O toke expirou ou é inválido.'
