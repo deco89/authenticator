@@ -3,16 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { provideHttpClient } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/register/register.component';
+import { ActivateAccountComponent } from './pages/activate-account/activate-account.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ActivateAccountComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

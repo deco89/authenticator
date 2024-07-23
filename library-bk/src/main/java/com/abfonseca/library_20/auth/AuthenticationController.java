@@ -1,6 +1,5 @@
 package com.abfonseca.library_20.auth;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthenticationController {
 
-    @Autowired
-    private AuthenticationService service;
+    private final AuthenticationService service;
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -33,7 +31,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
+    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody @Valid AuthenticationRequest request) {
         return ResponseEntity.ok(service.authenticate(request));
         
     }

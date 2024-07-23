@@ -60,7 +60,7 @@ public class GlobalExceptionHandler {
     };
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ExceptionResponse> handleException(MethodArgumentNotValidException exp) {
+    public ResponseEntity<ExceptionResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException exp) {
         Set<String> errors = new HashSet<>();
         exp.getBindingResult().getAllErrors()
             .forEach(error -> {

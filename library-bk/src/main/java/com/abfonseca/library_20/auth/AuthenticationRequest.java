@@ -17,9 +17,10 @@ public class AuthenticationRequest {
     @NotEmpty(message = "Email é obrigatório")
     @NotNull(message = "Email é obrigatório")
     private String email;
+    
     @NotEmpty(message = "Senha é obrigatória")
     @NotNull(message = "Senha é obrigatória")
-    @Size(min = 8, message = "A senha precisa ter no mínimo que letras")
+    @Size(min = 8, message = "A senha precisa ter no mínimo 8 letras")
     private String password;
 
 }
